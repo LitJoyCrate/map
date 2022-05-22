@@ -101,11 +101,11 @@
 .leaflet-interactive
 {
   /* opacity: 1; */
-  opacity: 0;
+  opacity: 1;
 }
 
 .leaflet-control-container .leaflet-draw{
   /* display: block; */
-  display: none;
+  display: block;
 }
 /* ADMIN ONLY CSS END */ 
