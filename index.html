@@ -129,42 +129,284 @@
       // }).addTo(map);
 
 			// WELCOME.bindPopup(WELCOME_POPUP_HTML);
+			
 			/* Template Popup Configuration END */
+			
+			
+			/* Welcome Popup Configuration START */
+			 var welcome_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[2761.432194,-4970.666992],[3721.239089,-5018.666992],[3790.558151,-4277.333496],[3465.290584,-3802.666992],[3593.264837,-3514.666992],[2804.090116,-3568],[2772.096552,-3989.333496],[2697.445068,-4314.666992],[2761.432194,-4970.666992]]]}}'
+			 const WELCOME_DATA = {
+         img_name : "",
+         title : "The World of LitJoy",
+         description : "Welcome to the World of LitJoy! Explore our collections!",
+			 	subx_btn_txt: "",
+         subx_btn_url : "",
+				shop_btn_txt: "",
+         shop_btn_url : "",
+         label: 'Welcome',
+       }
+       const WELCOME_POPUP_HTML = generatePopupHtmlCode(WELCOME_DATA);
+
+       var WELCOME = L.geoJSON(JSON.parse(welcome_json), {
+         id: 'welcome',
+       }).addTo(map);
+
+			 WELCOME.bindPopup(WELCOME_POPUP_HTML);
+			
+			/* Welcome Popup Configuration END */
+			
+			
+			/* Lunacorns Popup Configuration START */
+			 var lunacorns_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[1387.721351,-1902.976658],[1623.666841,-2436.167367],[1916.93234,-2472.157745],[2358.163899,-2202.896478],[2362.162975,-1728.356593],[2052.900928,-1484.421807],[1613.002557,-1589.727029],[1387.721351,-1902.976658]]]}}'
+			 const lunacorns_DATA = {
+         img_name : "",
+         title : "Lunacorns",
+         description : "Explore the Secret Shop!!! For Lunacorn travelers only!",
+			 	subx_btn_txt: "Join Today",
+         subx_btn_url : "https://litjoycrate.com/pages/lunacorns",
+		 	shop_btn_txt: "Lunacorns Store",
+         shop_btn_url : "https://litjoycrate.com/collections/lunacorn-store",
+         label: 'lunacorns',
+       }
+       const lunacorns_POPUP_HTML = generatePopupHtmlCode(lunacorns_DATA);
+
+       var lunacorns = L.geoJSON(JSON.parse(lunacorns_json), {
+        id: 'lunacorns',
+       }).addTo(map);
+
+			 lunacorns.bindPopup(lunacorns_POPUP_HTML);
+			
+			/* Lunacorns Popup Configuration END */
+
+		
+
+			/* Sarah J Maas Popup Configuration START */
+			 var sjmaas_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[201.962413,-865.769079],[289.942087,-436.550514],[676.519479,-176.620004],[1128.415078,-244.60183],[1385.689015,-725.806497],[1193.733362,-996.400904],[692.515783,-1228.338898],[401.916233,-1181.684622],[201.962413,-865.769079]]]}}'
+			 const sjmaas_DATA = {
+         img_name : "",
+         title : "Sarah J. Maas",
+         description : "Shop everything ACOTAR and TOG! A customer favorite!",
+			 	subx_btn_txt: "",
+         subx_btn_url : "",
+			 	shop_btn_txt: "SHOP ALL",
+         shop_btn_url : "https://litjoycrate.com/collections/sarah-j-maas",
+         label: 'sjmaas',
+       }
+       const sjmaas_POPUP_HTML = generatePopupHtmlCode(sjmaas_DATA);
+
+       var sjmaas = L.geoJSON(JSON.parse(sjmaas_json), {
+         id: 'sjmaas',
+       }).addTo(map);
+
+			 sjmaas.bindPopup(sjmaas_POPUP_HTML);
+			
+			/* Sarah J Maas Popup Configuration END */	
 
 			
-			/* Template Popup Configuration START */
-			var magical_json ='{"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[1400,-5048]}}'
+			
+			/* Classics Popup Configuration START */
+			 var classics_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[3115.900126,-1366.296104],[3495.145822,-1570.908059],[3859.728341,-1816.175863],[3847.064519,-2080.771752],[3465.152752,-2314.042763],[3049.248837,-2265.389144],[2968.600813,-1862.830017],[2915.946306,-1446.941201],[3115.900126,-1366.296104]]]}}'
+			 const CLASSICS_DATA = {
+         img_name : "",
+         title : "Classics Collection",
+         description : "Get lost in the land of LitJoy Classic Books and more!",
+			 	subx_btn_txt: "",
+         subx_btn_url : "",
+			shop_btn_txt: "SHOP ALL",
+         shop_btn_url : "https://litjoycrate.com/collections/litjoy-classic-books",
+         label: 'Classics',
+       }
+       const CLASSICS_POPUP_HTML = generatePopupHtmlCode(CLASSICS_DATA);
+
+       var CLASSICS = L.geoJSON(JSON.parse(classics_json), {
+         id: 'CLASSICS',
+       }).addTo(map);
+
+			 CLASSICS.bindPopup(CLASSICS_POPUP_HTML);
+			
+			/* Classics Popup Configuration END */
+			
+		
+		
+		/* Sabaa Tahir Popup Configuration START */
+			 var sabaa_tahir_popup ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[4327.575006,-2900.487438],[4948.764989,-2951.140584],[5167.380987,-3416.349588],[5168.714175,-3585.637583],[4762.141357,-3820.241612],[4346.237442,-3789.58306],[4078.299344,-3600.300411],[4327.575006,-2900.487438]]]}}'
+			 const sabaa_tahir_data = {
+         img_name : "img_avatar.png",
+         title : "Sabaa Tahir",
+         description : "You are an Ember in the Ashes . . . Shop the full collection!",
+			 	subx_btn_txt: "",
+         subx_btn_url : "",
+			 	shop_btn_txt: "SHOP ALL",
+         shop_btn_url : "https://litjoycrate.com/pages/sabaa-tahir",
+         label: 'Sabaa Tahir',
+       }
+       const sabaa_tahir_html = generatePopupHtmlCode(sabaa_tahir_data);
+
+       var sabaa_tahir = L.geoJSON(JSON.parse(sabaa_tahir_popup), {
+         id: 'sabaa_tahir',
+       }).addTo(map);
+
+			 sabaa_tahir.bindPopup(sabaa_tahir_html);
+			
+			/* Sabaa Tahir Popup Configuration END */
+
+			
+
+		/* Cassandra Clare Popup Configuration START */
+			 var CCLARE_popup ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[129.312702,-4504.327138],[342.596779,-4141.757319],[674.520095,-3904.487438],[1119.750547,-4349.701727],[1094.423146,-4640.290789],[687.850328,-4888.224506],[295.94087,-4832.239473],[129.312702,-4504.327138]]]}}'
+			 const CCLARE_data = {
+         img_name : "img_avatar.png",
+         title : "Cassandra Clare",
+         description : "Calling all Shadowhunters! The Mortal Instruments Special Edition is SIGNED and ANNOTATED!",
+			 	subx_btn_txt: "BUY BOXED SET EDITION",
+         subx_btn_url : "https://litjoycrate.com/products/the-mortal-instruments-boxed-set",
+			 	shop_btn_txt: "SHOP ALL",
+         shop_btn_url : "https://litjoycrate.com/collections/cassandra-clare-collection",
+         label: 'Cassandra Clare',
+       }
+       const CCLARE_html = generatePopupHtmlCode(CCLARE_data);
+
+       var CCLARE = L.geoJSON(JSON.parse(CCLARE_popup), {
+         id: 'CCLARE',
+       }).addTo(map);
+
+			 CCLARE.bindPopup(CCLARE_html);
+			
+			/* Cassandra Clare Popup Configuration END */
+		
+
+		
+			/* Laini Taylor Popup Configuration START */
+			 var laini_taylor_popup ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[3610.447476,-6919.783873],[4168.985064,-6739.831982],[4780.843707,-7291.684449],[4346.277478,-7707.573265],[3862.38927,-7683.579679],[3527.799883,-7512.958667],[3610.447476,-6919.783873]]]}}'
+			 const laini_taylor_data = {
+         img_name : "img_avatar.png",
+         title : "Laini Taylor",
+         description : "Unlock the land of Laini Taylor! Shop the Great Library of Zosma Key!",
+			 	subx_btn_txt: "",
+         subx_btn_url : "",
+			 	shop_btn_txt: "SHOP NOW",
+         shop_btn_url : "https://litjoycrate.com/collections/laini-taylor-collection",
+         label: 'Laini Taylor',
+       }
+       const laini_taylor_html = generatePopupHtmlCode(laini_taylor_data);
+
+       var laini_taylor = L.geoJSON(JSON.parse(laini_taylor_popup), {
+         id: 'laini_taylor',
+       }).addTo(map);
+
+			 laini_taylor.bindPopup(laini_taylor_html);
+			
+			/* Laini Taylor Popup Configuration END */
+			
+			
+			
+			/* Margaret Rogerson Popup Configuration START */
+			 var margaret_rogerson_popup ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[5387.506637,-7605.836187],[5926.048723,-7856.436184],[6022.026549,-8426.950654],[5568.79825,-8698.877957],[5163.558376,-8389.626648],[5078.244589,-8160.354934],[5387.506637,-7605.836187]]]}}'
+			 const margaret_rogerson_data = {
+         img_name : "img_avatar.png",
+         title : "Margaret Rogerson",
+         description : "Discover an enchanted library in the world of Sorcery of Thorns",
+			 	subx_btn_txt: "SHOP ALL",
+         subx_btn_url : "https://litjoycrate.com/collections/margaret-rogerson-collection",
+			 	shop_btn_txt: "",
+         shop_btn_url : "",
+         label: 'Margaret Rogerson',
+       }
+       const margaret_rogerson_html = generatePopupHtmlCode(margaret_rogerson_data);
+
+       var margaret_rogerson = L.geoJSON(JSON.parse(margaret_rogerson_popup), {
+         id: 'margaret_rogerson',
+       }).addTo(map);
+
+			 margaret_rogerson.bindPopup(margaret_rogerson_html);
+			
+			/* Margaret Rogerson Popup Configuration END */
+			
+			
+			
+			
+			/* Jay Kristoff Popup Configuration START */
+			 var jay_kristoff_popup ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[1807.591636,-8994.666992],[2268.818576,-8618.666992],[1671.623049,-8045.333496],[1277.047581,-8210.666748],[978.449878,-8645.333496],[1255.719134,-8989.333496],[1807.591636,-8994.666992]]]}}'
+			 const jay_kristoff_data = {
+         img_name : "img_avatar.png",
+         title : "Jay Kristoff",
+         description : "The Nevernight Chronicles Collectors' Edition! Our most DELUXE book yet! SIGNED and ANNOTATED!",
+			 	subx_btn_txt: "BUY COLLECTORS EDITION OF NEVERNIGHT",
+         subx_btn_url : "https://litjoycrate.com/products/the-nevernight-chronicles-collectors-edition",
+			 	shop_btn_txt: "",
+         shop_btn_url : "",
+         label: 'Jay Kristoff',
+       }
+       const jay_kristoff_html = generatePopupHtmlCode(jay_kristoff_data);
+
+       var jay_kristoff = L.geoJSON(JSON.parse(jay_kristoff_popup), {
+         id: 'jay_kristoff',
+       }).addTo(map);
+
+			 jay_kristoff.bindPopup(jay_kristoff_html);
+			
+			/* Jay Kristoff Popup Configuration END */
+			
+			
+			
+			
+			
+		/* Shop Popup Configuration START */
+			var shop_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[1233.799514,-6320.846709],[1409.758862,-5707.677139],[1980.2938,-5654.357897],[2236.234671,-6406.15691],[1889.648238,-6640.761183],[1233.799514,-6320.846709]]]}}'
+			const SHOP_DATA = {
+        img_name : "",
+        title : "LitJoy Shop",
+        description : "On your journey, pause at the LitJoy Shop! Don't forget to use your reward points!",
+				subx_btn_txt: "",
+        subx_btn_url : "",
+				shop_btn_txt: "SHOP",
+        shop_btn_url : "/collections/litjoy-shop",
+        label: 'SHOP',
+      }
+      const SHOP_POPUP_HTML = generatePopupHtmlCode(SHOP_DATA);
+
+      var SHOP = L.geoJSON(JSON.parse(shop_json), {
+        id: 'shop',
+      }).addTo(map);
+
+			SHOP.bindPopup(SHOP_POPUP_HTML);
+			/* SHOP Popup Configuration END */
+			
+			
+			
+			/* Magical Popup Configuration START */
+			var magical_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[4271.755904,-5214.483814],[4239.763296,-5513.070737],[4479.707862,-6118.242202],[5023.582211,-6410.16416],[5559.458531,-6127.573082],[5326.178929,-5409.098533],[4706.322133,-5133.172239],[4271.755904,-5214.483814]]]}}'
 			const MAGICAL_DATA = {
         img_name : "magical_popup.png",
-        title : "Hi, this is Magical",
-        description : "Magical description",
-				subx_btn_txt: "M_SUBSCRIBE",
-        subx_btn_url : "/collections",
-				shop_btn_txt: "SHOPPING",
-        shop_btn_url : "/collections/all",
-        label: 'Welcome',
+        title : "Magical Subscriptions",
+        description : "All aboard the Magical Express! This quarter's crate theme!",
+				subx_btn_txt: "SUBSCRIBE",
+        subx_btn_url : "https://litjoycrate.com/pages/magical-subscription",
+				shop_btn_txt: "SHOP MAGICAL",
+        shop_btn_url : "https://litjoycrate.com/collections/magical",
+        label: 'Magical',
       }
       const MAGICAL_POPUP_HTML = generatePopupHtmlCode(MAGICAL_DATA);
 
       var MAGICAL = L.geoJSON(JSON.parse(magical_json), {
-        id: 'welcome',
+        id: 'magical',
       }).addTo(map);
 
 			MAGICAL.bindPopup(MAGICAL_POPUP_HTML);
-			/* Template Popup Configuration END */
+			/* Magical Popup Configuration END */
 
 
 			/* YA Popup Configuration START */
-			var YA_subx_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[3624,-2424],[3472,-3048],[4344,-2944],[4216,-2472],[3624,-2424]]]}}'
+			var YA_subx_json ='{"type":"Feature","properties":{},"geometry":{"type":"Polygon","coordinates":[[[5787.820147,-71.32476],[6183.062148,-147.304448],[6345.02473,-428.5626],[6333.027502,-1051.062836],[5914.128422,-1266.995189],[5548.879431,-1224.339967],[5303.602723,-732.471402],[5188.962582,-183.284879],[5787.820147,-71.32476]]]}}'
 			const YA_DATA = {
         img_name : "img_avatar.png",
         title : "Young Adult Book Subscription",
-        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, et dolore magna aliqua.",
-				subx_btn_txt: "SUB",
-        subx_btn_url : "/collections/all",
-				shop_btn_txt : "SHOPPING",
-        shop_btn_url : "/collections/all",
-        label: 'Lunacorns',
+        description : "Now selling our Magic Awakens Crate! Don’t miss the special edition book!",
+				subx_btn_txt: "SUBSCRIBE",
+        subx_btn_url : "https://litjoycrate.com/pages/young-adult-subscription-1",
+				shop_btn_txt : "SHOP YA",
+        shop_btn_url : "https://litjoycrate.com/collections/litjoy-shop",
+        label: 'ya_adult',
       }
       const YA_POPUP_HTML = generatePopupHtmlCode(YA_DATA);
 
