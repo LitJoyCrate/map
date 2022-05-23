@@ -108,4 +108,7 @@
   /* display: block; */
   display: none;
 }
+.leaflet-pane{
+  margin-top: 150px;
+}
 /* ADMIN ONLY CSS END */ 
