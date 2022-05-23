@@ -17,7 +17,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
     <link rel="stylesheet" href="assets/lib/leaflet-custom.css">
 		<style>
-				html, body, #map { width:100%; height:100%; margin:0; padding:0; z-index: 1; background: #ffffff; } .leaflet-pane {margin-top: 28%;}
+				html, body, #map { width:100%; height:100%; margin:0; padding:0; z-index: 1; background: #ffffff; } 
 		</style>
 	</head>
 	<body>
@@ -480,8 +480,8 @@
 				alert(arr_for_db)
 			});
 
-			// adding a check to see if pop-up is out of window
-			[...document.querySelectorAll('.leaflet-interactive')].forEach(piece=>{
+						// adding a check to see if pop-up is out of window
+						[...document.querySelectorAll('.leaflet-interactive')].forEach(piece=>{
 				piece.addEventListener('click', (e)=>{
 				if(document.querySelector("#map .leaflet-popup-pane > div").getBoundingClientRect().top < document.querySelector("#map").getBoundingClientRect().top){
 					const offset = document.querySelector("#map").getBoundingClientRect().top + document.querySelector("#map .leaflet-popup-pane > div").getBoundingClientRect().top;
@@ -493,6 +493,7 @@
 			})
 
 			})
+			
 		</script>
 	</body>
 </html>
