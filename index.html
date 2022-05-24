@@ -484,16 +484,17 @@
 			});
 
 			const adjustPopup = (added_node) => {
+				let popUp = added_node.parentElement.parentElement;
 				if((added_node.getBoundingClientRect().top) < (document.querySelector("#map").getBoundingClientRect().top)){
-								const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
+								const offset = document.querySelector("#map").getBoundingClientRect().top + popUp.getBoundingClientRect().top;
 								console.log('first here');
-								console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
+								console.log('added_node.getBoundingClientRect().top:', popUp.getBoundingClientRect().top)
 								console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
 								document.querySelector(".leaflet-map-pane").style.marginTop = Math.abs(offset)+ 45 +"px";
 							}
 							else {
 								console.log('second here');
-								console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
+								console.log('added_node.getBoundingClientRect().top:', popUp.getBoundingClientRect().top)
 								console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
 								document.querySelector(".leaflet-map-pane").style.marginTop = "50px";
 							}
@@ -502,7 +503,7 @@
 			const observer = new MutationObserver(function(mutations_list) {
 				mutations_list.forEach(function(mutation) {
 					mutation.addedNodes.forEach(function(added_node) {
-						if(added_node.classList.contains('leaflet-popup')) {
+						if(added_node.classList.contains('leaflet-popup-tip')) {
 							console.log('#child has been added');
 							// adjustPopup(added_node);
 						}
