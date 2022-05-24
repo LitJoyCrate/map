@@ -486,12 +486,12 @@
 					mutation.addedNodes.forEach(function(added_node) {
 						if(added_node.classList.contains('leaflet-popup')) {
 							console.log('#child has been added');
-							if(document.querySelector(".leaflet-popup").getBoundingClientRect().top < document.querySelector("#map").getBoundingClientRect().top){
-								const offset = document.querySelector("#map").getBoundingClientRect().top + document.querySelector(".leaflet-popup").getBoundingClientRect().top;
-								document.querySelector(".leaflet-popup").parentElement.style.marginTop = Math.abs(offset)+ 5 +"px";
+							if(added_node.getBoundingClientRect().top < document.querySelector("#map").getBoundingClientRect().top){
+								const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
+								document.querySelector(".leaflet-map-pane").style.marginTop = Math.abs(offset)+ 5 +"px";
 							}
 							else {
-								document.querySelector(".leaflet-popup").parentElement.style.marginTop = "0px";
+								document.querySelector(".leaflet-map-pane").style.marginTop = "0px";
 							}
 						}
 					});
