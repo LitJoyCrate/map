@@ -503,7 +503,7 @@
 			const observer = new MutationObserver(function(mutations_list) {
 				mutations_list.forEach(function(mutation) {
 					mutation.addedNodes.forEach(function(added_node) {
-						if(added_node.classList.contains('leaflet-popup-tip')) {
+						if(added_node.classList && added_node.classList.contains('leaflet-popup-tip')) {
 							console.log('#child has been added');
 						    adjustPopup(added_node);
 						}
