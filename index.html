@@ -505,14 +505,14 @@
 					mutation.addedNodes.forEach(function(added_node) {
 						if(added_node.classList.contains('leaflet-popup-tip')) {
 							console.log('#child has been added');
-							// adjustPopup(added_node);
+						    adjustPopup(added_node);
 						}
 					});
 				});
 			});
 
 			[...document.querySelectorAll('.leaflet-popup-pane')].forEach(p=>{
-				observer.observe(p, { subtree: false, childList: true });
+				observer.observe(p, { subtree: true, childList: true });
 			})
 			
 		</script>
