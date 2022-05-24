@@ -3909,6 +3909,7 @@ L.Draw.Tooltip = L.Class.extend({
 		this._visible = false;
 
 		if(this._container = map.options.drawControlTooltips){
+			console.log('HERE')
 			L.DomUtil.create('div', 'leaflet-draw-tooltip', this._popupPane);
 			fitPopUp();
 		}
