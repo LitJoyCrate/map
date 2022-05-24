@@ -480,20 +480,7 @@
 				alert(arr_for_db)
 			});
 
-						// adding a check to see if pop-up is out of window
-						[...document.querySelectorAll('.leaflet-interactive')].forEach(piece=>{
-				piece.addEventListener('click', (e)=>{
-				if(document.querySelector("#map .leaflet-popup-pane > div").getBoundingClientRect().top < document.querySelector("#map").getBoundingClientRect().top){
-					const offset = document.querySelector("#map").getBoundingClientRect().top + document.querySelector("#map .leaflet-popup-pane > div").getBoundingClientRect().top;
-					document.querySelector("#map .leaflet-popup-pane > div").style.marginTop = offset+"px";
-				}
-				else {
-					document.querySelector("#map .leaflet-popup-pane > div").style.marginTop = "0px";
-				}
-			})
 
-			})
-			
 		</script>
 	</body>
 </html>
