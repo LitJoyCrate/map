@@ -40,7 +40,6 @@
 			};
 			var layer;
 			var map = new L.Map('map', {
-				animate: false,
 				maxZoom: mapMaxZoom,
 				minZoom: mapMinZoom,
 				maxBounds: bounds,
@@ -48,6 +47,8 @@
 				attributionControl: false,
 				zoomControl: false
 			});
+
+			map._panAnim = {};
 			
 			L.control.zoom({
 				position: 'bottomright'
