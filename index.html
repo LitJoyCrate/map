@@ -40,6 +40,7 @@
 			};
 			var layer;
 			var map = new L.Map('map', {
+				animate: false,
 				maxZoom: mapMaxZoom,
 				minZoom: mapMinZoom,
 				maxBounds: bounds,
@@ -198,7 +199,7 @@
          id: 'sjmaas',
        }).addTo(map);
 
-			 sjmaas.bindPopup(sjmaas_POPUP_HTML, {autoPanPaddingTopLeft:[200,200]});
+			 sjmaas.bindPopup(sjmaas_POPUP_HTML, {});
 			
 			/* Sarah J Maas Popup Configuration END */	
 
