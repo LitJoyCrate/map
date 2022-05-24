@@ -11,15 +11,6 @@
  */
 L.drawVersion = "0.4.12+9a20e73";
 
-const fitPopUp = () => {
-	if(document.querySelector("#map .leaflet-popup-pane > div").getBoundingClientRect().top < document.querySelector("#map").getBoundingClientRect().top){
-		const offset = document.querySelector("#map").getBoundingClientRect().top + document.querySelector("#map .leaflet-popup-pane > div").getBoundingClientRect().top;
-		document.querySelector("#map .leaflet-popup-pane > div").style.marginTop = offset+"px";
-	}
-	else {
-		document.querySelector("#map .leaflet-popup-pane > div").style.marginTop = "0px";
-	}
-}
 
 /**
  * @class L.Draw
@@ -3908,14 +3899,8 @@ L.Draw.Tooltip = L.Class.extend({
 		this._popupPane = map._panes.popupPane;
 		this._visible = false;
 
-		if(this._container = map.options.drawControlTooltips){
-			console.log('HERE')
-			L.DomUtil.create('div', 'leaflet-draw-tooltip', this._popupPane);
-			fitPopUp();
-		}
-		else{
-			return null;
-		}
+		this._container = map.options.drawControlTooltips ?
+			L.DomUtil.create('div', 'leaflet-draw-tooltip', this._popupPane) : null;
 		this._singleLineLabel = false;
 
 		this._map.on('mouseout', this._onMouseOut, this);

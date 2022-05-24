@@ -481,6 +481,27 @@
 			});
 
 
+			const observer = new MutationObserver(function(mutations_list) {
+				mutations_list.forEach(function(mutation) {
+					mutation.addedNodes.forEach(function(added_node) {
+						if(added_node.classList.contains('leaflet-popup')) {
+							console.log('#child has been added');
+							if(document.querySelector(".leaflet-popup").getBoundingClientRect().top < document.querySelector("#map").getBoundingClientRect().top){
+								const offset = document.querySelector("#map").getBoundingClientRect().top + document.querySelector(".leaflet-popup").getBoundingClientRect().top;
+								document.querySelector(".leaflet-popup").parentElement.style.marginTop = Math.abs(offset)+ 5 +"px";
+							}
+							else {
+								document.querySelector(".leaflet-popup").parentElement.style.marginTop = "0px";
+							}
+						}
+					});
+				});
+			});
+
+			[...document.querySelectorAll('.leaflet-popup-pane')].forEach(p=>{
+				observer.observe(p, { subtree: false, childList: true });
+			})
+
 		</script>
 	</body>
 </html>
