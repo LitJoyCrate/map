@@ -153,7 +153,7 @@
          id: 'welcome',
        }).addTo(map);
 
-			 WELCOME.bindPopup(WELCOME_POPUP_HTML, {autoPan:true});
+			 WELCOME.bindPopup(WELCOME_POPUP_HTML, {autoPan:false});
 			
 			/* Welcome Popup Configuration END */
 			
@@ -176,7 +176,7 @@
         id: 'lunacorns',
        }).addTo(map);
 
-			 lunacorns.bindPopup(lunacorns_POPUP_HTML, {autoPan:true});
+			 lunacorns.bindPopup(lunacorns_POPUP_HTML, {autoPan:false});
 			
 			/* Lunacorns Popup Configuration END */
 
@@ -200,7 +200,7 @@
          id: 'sjmaas',
        }).addTo(map);
 
-			 sjmaas.bindPopup(sjmaas_POPUP_HTML, {autoPan:false, keepInView:true});
+			 sjmaas.bindPopup(sjmaas_POPUP_HTML, {autoPan:false});
 			
 			/* Sarah J Maas Popup Configuration END */	
 
@@ -224,7 +224,7 @@
          id: 'CLASSICS',
        }).addTo(map);
 
-			 CLASSICS.bindPopup(CLASSICS_POPUP_HTML, {autoPan:true});
+			 CLASSICS.bindPopup(CLASSICS_POPUP_HTML, {autoPan:false});
 			
 			/* Classics Popup Configuration END */
 			
@@ -248,7 +248,7 @@
          id: 'sabaa_tahir',
        }).addTo(map);
 
-			 sabaa_tahir.bindPopup(sabaa_tahir_html, {autoPan:true});
+			 sabaa_tahir.bindPopup(sabaa_tahir_html, {autoPan:false});
 			
 			/* Sabaa Tahir Popup Configuration END */
 
@@ -272,7 +272,7 @@
          id: 'CCLARE',
        }).addTo(map);
 
-			 CCLARE.bindPopup(CCLARE_html, {autoPan:true});
+			 CCLARE.bindPopup(CCLARE_html, {autoPan:false});
 			
 			/* Cassandra Clare Popup Configuration END */
 		
@@ -296,7 +296,7 @@
          id: 'laini_taylor',
        }).addTo(map);
 
-			 laini_taylor.bindPopup(laini_taylor_html, {autoPan:true});
+			 laini_taylor.bindPopup(laini_taylor_html, {autoPan:false});
 			
 			/* Laini Taylor Popup Configuration END */
 			
@@ -320,7 +320,7 @@
          id: 'margaret_rogerson',
        }).addTo(map);
 
-			 margaret_rogerson.bindPopup(margaret_rogerson_html, {autoPan:true});
+			 margaret_rogerson.bindPopup(margaret_rogerson_html, {autoPan:false});
 			
 			/* Margaret Rogerson Popup Configuration END */
 			
@@ -345,7 +345,7 @@
          id: 'jay_kristoff',
        }).addTo(map);
 
-			 jay_kristoff.bindPopup(jay_kristoff_html, {autoPan:true});
+			 jay_kristoff.bindPopup(jay_kristoff_html, {autoPan:false});
 			
 			/* Jay Kristoff Popup Configuration END */
 			
@@ -371,7 +371,7 @@
         id: 'shop',
       }).addTo(map);
 
-			SHOP.bindPopup(SHOP_POPUP_HTML, {autoPan:true});
+			SHOP.bindPopup(SHOP_POPUP_HTML, {autoPan:false});
 			/* SHOP Popup Configuration END */
 			
 			
@@ -394,7 +394,7 @@
         id: 'magical',
       }).addTo(map);
 
-			MAGICAL.bindPopup(MAGICAL_POPUP_HTML, {autoPan:true});
+			MAGICAL.bindPopup(MAGICAL_POPUP_HTML, {autoPan:false});
 			/* Magical Popup Configuration END */
 
 
@@ -416,7 +416,7 @@
         id: 'ya_adult',
       }).addTo(map);
 
-			YA.bindPopup(YA_POPUP_HTML, {autoPan:true});
+			YA.bindPopup(YA_POPUP_HTML, {autoPan:false});
       // YA.bindTooltip(YA_DATA.label, 
       //     {
       //         permanent: true, 
@@ -482,32 +482,32 @@
 				alert(arr_for_db)
 			});
 
-			// const observer = new MutationObserver(function(mutations_list) {
-			// 	mutations_list.forEach(function(mutation) {
-			// 		mutation.addedNodes.forEach(function(added_node) {
-			// 			if(added_node.classList.contains('leaflet-popup')) {
-			// 				console.log('#child has been added');
-			// 				if((added_node.getBoundingClientRect().top) < (document.querySelector("#map").getBoundingClientRect().top)){
-			// 					const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
-			// 					console.log('first here');
-			// 					console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
-			// 					console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
-			// 					document.querySelector(".leaflet-map-pane").style.marginTop = Math.abs(offset)+ 5 +"px";
-			// 				}
-			// 				else {
-			// 					console.log('second here');
-			// 					console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
-			// 					console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
-			// 					document.querySelector(".leaflet-map-pane").style.marginTop = "0px";
-			// 				}
-			// 			}
-			// 		});
-			// 	});
-			// });
+			const observer = new MutationObserver(function(mutations_list) {
+				mutations_list.forEach(function(mutation) {
+					mutation.addedNodes.forEach(function(added_node) {
+						if(added_node.classList.contains('leaflet-popup')) {
+							console.log('#child has been added');
+							if((added_node.getBoundingClientRect().top) < (document.querySelector("#map").getBoundingClientRect().top)){
+								const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
+								console.log('first here');
+								console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
+								console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
+								document.querySelector(".leaflet-map-pane").style.marginTop = Math.abs(offset)+ 5 +"px";
+							}
+							else {
+								console.log('second here');
+								console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
+								console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
+								document.querySelector(".leaflet-map-pane").style.marginTop = "0px";
+							}
+						}
+					});
+				});
+			});
 
-			// [...document.querySelectorAll('.leaflet-popup-pane')].forEach(p=>{
-			// 	observer.observe(p, { subtree: false, childList: true });
-			// })
+			[...document.querySelectorAll('.leaflet-popup-pane')].forEach(p=>{
+				observer.observe(p, { subtree: false, childList: true });
+			})
 			
 		</script>
 	</body>
