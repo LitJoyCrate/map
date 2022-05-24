@@ -504,7 +504,7 @@
 					mutation.addedNodes.forEach(function(added_node) {
 						if(added_node.classList.contains('leaflet-popup')) {
 							console.log('#child has been added');
-							adjustPopup(added_node);
+							// adjustPopup(added_node);
 							setTimeout(()=>adjustPopup(added_node), 250);
 						}
 					});
