@@ -482,28 +482,32 @@
 				alert(arr_for_db)
 			});
 
-			// const observer = new MutationObserver(function(mutations_list) {
-			// 	mutations_list.forEach(function(mutation) {
-			// 		mutation.addedNodes.forEach(function(added_node) {
-			// 			if(added_node.classList.contains('leaflet-popup')) {
-			// 				console.log('#child has been added');
-			// 				if((added_node.getBoundingClientRect().top) < (document.querySelector("#map").getBoundingClientRect().top)){
-			// 					console.log('first here')
-			// 					const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
-			// 					document.querySelector(".leaflet-map-pane").style.marginTop = Math.abs(offset)+ 5 +"px";
-			// 				}
-			// 				else {
-			// 					console.log('second here')
-			// 					document.querySelector(".leaflet-map-pane").style.marginTop = "0px";
-			// 				}
-			// 			}
-			// 		});
-			// 	});
-			// });
+			const observer = new MutationObserver(function(mutations_list) {
+				mutations_list.forEach(function(mutation) {
+					mutation.addedNodes.forEach(function(added_node) {
+						if(added_node.classList.contains('leaflet-popup')) {
+							console.log('#child has been added');
+							if((added_node.getBoundingClientRect().top) < (document.querySelector("#map").getBoundingClientRect().top)){
+								const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
+								console.log('first here');
+								console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
+								console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
+								document.querySelector(".leaflet-map-pane").style.marginTop = Math.abs(offset)+ 5 +"px";
+							}
+							else {
+								console.log('second here');
+								console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
+								console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
+								document.querySelector(".leaflet-map-pane").style.marginTop = "0px";
+							}
+						}
+					});
+				});
+			});
 
-			// [...document.querySelectorAll('.leaflet-popup-pane')].forEach(p=>{
-			// 	observer.observe(p, { subtree: false, childList: true });
-			// })
+			[...document.querySelectorAll('.leaflet-popup-pane')].forEach(p=>{
+				observer.observe(p, { subtree: false, childList: true });
+			})
 			
 		</script>
 	</body>
