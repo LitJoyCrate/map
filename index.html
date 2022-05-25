@@ -489,6 +489,7 @@
 			})
 
 			const adjustPopup = (added_node) => {
+				console.log('Transform:',added_node.style.transform)
 				if((added_node.getBoundingClientRect().top) < (document.querySelector("#map").getBoundingClientRect().top)){
 								const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
 								console.log('first here');
