@@ -47,8 +47,6 @@
 				attributionControl: false,
 				zoomControl: false
 			});
-
-			// map._panAnim = {};
 			
 			L.control.zoom({
 				position: 'bottomright'
@@ -65,12 +63,13 @@
 				crs.unproject(L.point(mapExtent[2], mapExtent[3])),
 				crs.unproject(L.point(mapExtent[0], mapExtent[1]))
 			]);
-
-			map.zoom = 4;
 			
 			map.on('click', function(e) {
 				console.log(e.latlng.lat + ", " + e.latlng.lng)
 			});
+
+			map.zoom = 4;
+			map._enforcingBounds = true;
 			
 			// ....polygon custom style.....
 			function style(feature) {
@@ -155,7 +154,7 @@
          id: 'welcome',
        }).addTo(map);
 
-			 WELCOME.bindPopup(WELCOME_POPUP_HTML, {autoPan:false});
+			 WELCOME.bindPopup(WELCOME_POPUP_HTML);
 			
 			/* Welcome Popup Configuration END */
 			
@@ -178,7 +177,7 @@
         id: 'lunacorns',
        }).addTo(map);
 
-			 lunacorns.bindPopup(lunacorns_POPUP_HTML, {autoPan:false});
+			 lunacorns.bindPopup(lunacorns_POPUP_HTML);
 			
 			/* Lunacorns Popup Configuration END */
 
@@ -202,9 +201,8 @@
          id: 'sjmaas',
        }).addTo(map);
 
-			 sjmaas.bindPopup(sjmaas_POPUP_HTML, {autoPan:false});
-
-			 
+			 sjmaas.bindPopup(sjmaas_POPUP_HTML);
+			
 			/* Sarah J Maas Popup Configuration END */	
 
 			
@@ -227,7 +225,7 @@
          id: 'CLASSICS',
        }).addTo(map);
 
-			 CLASSICS.bindPopup(CLASSICS_POPUP_HTML, {autoPan:false});
+			 CLASSICS.bindPopup(CLASSICS_POPUP_HTML);
 			
 			/* Classics Popup Configuration END */
 			
@@ -251,7 +249,7 @@
          id: 'sabaa_tahir',
        }).addTo(map);
 
-			 sabaa_tahir.bindPopup(sabaa_tahir_html, {autoPan:false});
+			 sabaa_tahir.bindPopup(sabaa_tahir_html);
 			
 			/* Sabaa Tahir Popup Configuration END */
 
@@ -275,7 +273,7 @@
          id: 'CCLARE',
        }).addTo(map);
 
-			 CCLARE.bindPopup(CCLARE_html, {autoPan:false});
+			 CCLARE.bindPopup(CCLARE_html);
 			
 			/* Cassandra Clare Popup Configuration END */
 		
@@ -299,7 +297,7 @@
          id: 'laini_taylor',
        }).addTo(map);
 
-			 laini_taylor.bindPopup(laini_taylor_html, {autoPan:false});
+			 laini_taylor.bindPopup(laini_taylor_html);
 			
 			/* Laini Taylor Popup Configuration END */
 			
@@ -323,7 +321,7 @@
          id: 'margaret_rogerson',
        }).addTo(map);
 
-			 margaret_rogerson.bindPopup(margaret_rogerson_html, {autoPan:false});
+			 margaret_rogerson.bindPopup(margaret_rogerson_html);
 			
 			/* Margaret Rogerson Popup Configuration END */
 			
@@ -348,7 +346,7 @@
          id: 'jay_kristoff',
        }).addTo(map);
 
-			 jay_kristoff.bindPopup(jay_kristoff_html, {autoPan:false});
+			 jay_kristoff.bindPopup(jay_kristoff_html);
 			
 			/* Jay Kristoff Popup Configuration END */
 			
@@ -374,7 +372,7 @@
         id: 'shop',
       }).addTo(map);
 
-			SHOP.bindPopup(SHOP_POPUP_HTML, {autoPan:false});
+			SHOP.bindPopup(SHOP_POPUP_HTML);
 			/* SHOP Popup Configuration END */
 			
 			
@@ -397,7 +395,7 @@
         id: 'magical',
       }).addTo(map);
 
-			MAGICAL.bindPopup(MAGICAL_POPUP_HTML, {autoPan:false});
+			MAGICAL.bindPopup(MAGICAL_POPUP_HTML);
 			/* Magical Popup Configuration END */
 
 
@@ -419,7 +417,7 @@
         id: 'ya_adult',
       }).addTo(map);
 
-			YA.bindPopup(YA_POPUP_HTML, {autoPan:false});
+			YA.bindPopup(YA_POPUP_HTML);
       // YA.bindTooltip(YA_DATA.label, 
       //     {
       //         permanent: true, 
@@ -484,46 +482,6 @@
 				
 				alert(arr_for_db)
 			});
-
-			// map.on('popupopen', function(e){
-			// 	console.log('HERE IN THIS:', e.popup._latlng.lng);
-			// 	adjustPopup(document.querySelector('.leaflet-popup-content-wrapper'))
-			// })
-
-			// const adjustPopup = (added_node) => {
-			// 	console.log('Transform:',added_node.style.transform)
-			// 	// if((added_node.getBoundingClientRect().top) < (document.querySelector("#map").getBoundingClientRect().top)){
-			// 					const offset = document.querySelector("#map").getBoundingClientRect().top + added_node.getBoundingClientRect().top;
-			// 					console.log('first here');
-			// 					console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
-			// 					console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
-			// 					// document.querySelector(".leaflet-map-pane").style.marginTop = Math.abs(offset)+ 45 +"px";
-			// 					document.querySelector(".leaflet-map-pane").style.marginTop = "123px";
-
-							// }
-							// else {
-							// 	console.log('second here');
-							// 	console.log('added_node.getBoundingClientRect().top:', added_node.getBoundingClientRect().top)
-							// 	console.log('not that one:', document.querySelector("#map").getBoundingClientRect().top)
-							// 	document.querySelector(".leaflet-map-pane").style.marginTop = "50px";
-							// }
-			// }
-
-			// const observer = new MutationObserver(function(mutations_list) {
-			// 	mutations_list.forEach(function(mutation) {
-			// 		mutation.addedNodes.forEach(function(added_node) {
-			// 			if(added_node.classList.contains('leaflet-popup')) {
-			// 				console.log('#child has been added');
-			// 				adjustPopup(added_node);
-			// 			}
-			// 		});
-			// 	});
-			// });
-
-			// [...document.querySelectorAll('.leaflet-popup-pane')].forEach(p=>{
-			// 	observer.observe(p, { subtree: false, childList: true });
-			// })
-			
 		</script>
 	</body>
 </html>
