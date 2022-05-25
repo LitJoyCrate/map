@@ -57,6 +57,10 @@
   
 }
 
+.leaflet-map-pane{
+  margin-top: 123px;
+}
+
 .leaflet-popup-content .buttons-wrapper a {
   background: #528AA7;
   border-radius: 27px;
