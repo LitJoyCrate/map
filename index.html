@@ -484,7 +484,7 @@
 			});
 
 			map.on('popupopen', function(e){
-				console.log('HERE IN THIS:', e.popup);
+				console.log('HERE IN THIS:', e.popup._containerBottom);
 				adjustPopup(document.querySelector('.leaflet-popup-content-wrapper'))
 			})
 
